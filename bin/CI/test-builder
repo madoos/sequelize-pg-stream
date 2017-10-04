@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+GITHUB_USER=$1
+GITHUB_REPO=$2
+GITHUB_BRANCH=$3
+GITHUB_TOKEN=$4
+
+docker run --rm\
+  -e GITHUB_USER=$GITHUB_USER \
+  -e GITHUB_REPO=$GITHUB_REPO \
+  -e GITHUB_BRANCH=$GITHUB_BRANCH \
+  -e GITHUB_TOKEN=$GITHUB_TOKEN \
+  -e FORCE_COLOR=1 \
+  -v `pwd`/report:/container/workspace/repocitory-code/test/report \
+   madoos/node-test-builder:caseonit

@@ -1,0 +1,13 @@
+version: '2'
+services:
+
+  database_test:
+    image:  "postgres:latest"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=tst_db
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+    container_name: sequelize_pg_stream
+    # docker exec -it postgres_db psql psql -d scp_db -U scp_user --password scp_pass

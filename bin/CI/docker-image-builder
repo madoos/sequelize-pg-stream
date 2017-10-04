@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+docker run --rm \
+-e GITHUB_USER=$1 \
+-e GITHUB_REPO=$2 \
+-e GITHUB_BRANCH=$3 \
+-e GITHUB_TOKEN=$4 \
+-e DOCKER_USER=$5 \
+-e DOCKER_PASS=$6 \
+-e DOCKER_IMAGE=$7 \
+-e FORCE_COLOR=1 \
+--privileged madoos/docker-image-builder:latest

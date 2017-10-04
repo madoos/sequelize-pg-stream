@@ -1,0 +1,3 @@
+# !bin/bash
+
+./node_modules/.bin/eslint ./src/*/**/*.js  -f html -o ./test/report/linter/index.html

@@ -1,0 +1,52 @@
+{
+  "name": "sequelize-pg-stream",
+  "version": "0.0.1",
+  "description": "Make model classes streamable",
+  "main": "index.js",
+  "scripts": {
+    "commitmsg": "validate-commit-msg -p eslint",
+    "test": "npm run lint && npm run cover:unit",
+    "test:unit": "./bin/test/unit",
+    "test:int": "./bin/test/int",
+    "cover": "./bin/test/cover",
+    "cover:unit": "./bin/test/cover-unit",
+    "lint": "./bin/test/linter",
+    "serve:coverage": "./bin/serve/coverage",
+    "serve:linter": "./bin/serve/linter"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madoos/sequelize-pg-stream.git"
+  },
+  "keywords": [
+    "sequelize",
+    "stream",
+    "pg",
+    "model"
+  ],
+  "author": {
+    "name": "Maurice Domínguez",
+    "email": "maurice.ronet.dominguez@gmail.com",
+    "url": "https://github.com/madoos/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/madoos/sequelize-pg-stream.git/issues"
+  },
+  "homepage": "https://github.com/madoos/sequelize-pg-stream.git#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "http-server": "^0.9.0",
+    "husky": "^0.14.3",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "standard": "^8.6.0",
+    "validate-commit": "^3.2.1"
+  },
+  "standard": {
+    "env": {
+      "node": true,
+      "mocha": true
+    }
+  }
+}

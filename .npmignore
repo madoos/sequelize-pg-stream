@@ -1,0 +1,18 @@
+#tests
+test
+
+#build tools
+Jenkinsfile
+
+#linters
+.eslint*
+
+
+#editor settings
+.editorconfig
+
+#git
+.git*
+
+#node
+/node_modules/
