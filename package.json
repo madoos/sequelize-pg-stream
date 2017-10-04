@@ -1,7 +1,7 @@
 {
   "name": "sequelize-pg-stream",
   "version": "0.0.1",
-  "description": "Make model classes streamable",
+  "description": "Make model classes streamable when using PG",
   "main": "index.js",
   "scripts": {
     "commitmsg": "validate-commit-msg -p eslint",
