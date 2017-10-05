@@ -1,7 +1,7 @@
 'use strict'
 
 const mix = Object.assign
-const modelMethods = require('./modelMethods')
+const streamMethods = require('./streamMethods')
 
 module.exports = {
   streamFromModel,
@@ -10,7 +10,7 @@ module.exports = {
 }
 
 function streamFromModel (Model) {
-  return mix(Model, modelMethods)
+  return mix(Model, streamMethods)
 }
 
 function streamFromInstance (sequelize) {
