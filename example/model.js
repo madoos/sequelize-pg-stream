@@ -14,6 +14,10 @@ const {
   StringifyStream
 } = require('./common')
 
+const show = (...args) => {
+  console.log(...args)
+}
+
 example()
 
 async function example () {
@@ -22,9 +26,11 @@ async function example () {
   await sequelize.query(insertItemsQuey)
   await sequelize.sync()
 
-  const itemsStream = await Items.findAllStream()
+  const itemsStream = await Items.findAllStream({raw: true})
 
   itemsStream
+  .on('data', show)
   .pipe(StringifyStream())
+  .on('data', show)
   .pipe(process.stdout)
 }
