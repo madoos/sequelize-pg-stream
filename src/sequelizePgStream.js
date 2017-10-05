@@ -3,10 +3,13 @@
 const mix = Object.assign
 const streamMethods = require('./streamMethods')
 
+const Associator = require('./transforms/Associator')
+
 module.exports = {
   streamFromModel,
   streamFromInstance,
-  streamFromConstructor
+  streamFromConstructor,
+  include: (...args) => new Associator(...args)
 }
 
 function streamFromModel (Model) {

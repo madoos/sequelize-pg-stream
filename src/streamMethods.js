@@ -1,8 +1,9 @@
 'use strict'
 
-const QueryTransform = require('./QueryTransform')
 const PgQueryStream = require('pg-query-stream')
 const methods = Object.create(null)
+
+const Builder = require('./transforms/Builder')
 
 methods.findAllStream = findAllStream
 
@@ -14,11 +15,10 @@ function findAllStream (options = {}) {
   const sql = QueryGenerator.selectQuery(this.tableName, options, this)
   const queryStream = new PgQueryStream(sql)
 
-  const buildModel = new QueryTransform({
+  const buildModel = new Builder({
     objectMode: true,
-    writableObjectMode: true,
-    transform: (data, enc, done) => done(null, this.build(data))
-  })
+    writableObjectMode: true
+  }, this)
 
   return connectionManager
     .getConnection()
