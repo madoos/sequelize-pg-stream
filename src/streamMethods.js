@@ -1,9 +1,8 @@
 'use strict'
 
 const PgQueryStream = require('pg-query-stream')
-const methods = Object.create(null)
-
 const Builder = require('./transforms/Builder')
+const methods = Object.create(null)
 
 methods.findAllStream = findAllStream
 

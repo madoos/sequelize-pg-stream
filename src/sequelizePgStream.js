@@ -2,7 +2,6 @@
 
 const mix = Object.assign
 const streamMethods = require('./streamMethods')
-
 const Associator = require('./transforms/Associator')
 
 module.exports = {

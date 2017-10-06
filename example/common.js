@@ -3,7 +3,6 @@
 const sequelize = require('sequelize')
 const { Transform } = require('stream')
 
-
 module.exports = {
   database: 'test',
   username: 'test',

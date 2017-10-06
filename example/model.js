@@ -34,3 +34,21 @@ async function example () {
   .on('data', show)
   .pipe(process.stdout)
 }
+/*
+    promosStream
+    .include({
+        as: 'promoExports',
+        model: PromoExports,
+        foreignKey: 'promoId',
+        options: {
+            where: { date: today }
+        }
+    })
+    .include({
+        model: Provider,
+        foreignKey: 'promoId',
+        options: {
+            where: { type: 'reports' }
+        }
+    })
+*/
