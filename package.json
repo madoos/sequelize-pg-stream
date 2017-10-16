@@ -1,6 +1,6 @@
 {
   "name": "sequelize-pg-stream",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Make model classes streamable when using PG",
   "main": "index.js",
   "scripts": {
