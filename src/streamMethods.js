@@ -2,6 +2,7 @@
 
 const PgQueryStream = require('pg-query-stream')
 const Builder = require('./transforms/Builder')
+const { releaseConnection } = require('./utils')
 const methods = Object.create(null)
 
 methods.findAllStream = findAllStream
@@ -22,6 +23,13 @@ function findAllStream (options = {}) {
   return connectionManager
     .getConnection()
     .then((connection) => {
-      return options.raw ? connection.query(queryStream) : connection.query(queryStream).pipe(buildModel)
+      const stream = options.raw ? connection.query(queryStream) : connection.query(queryStream).pipe(buildModel)
+      const connectionHandler = options.connectionHandler ? connectionHandler : releaseConnection
+
+      stream
+      .on('end', () => connectionHandler(connectionManager, connection))
+      .on('finish', () => connectionHandler(connectionManager, connection))
+
+      return stream
     })
 }
