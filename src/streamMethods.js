@@ -12,7 +12,7 @@ module.exports = methods
 function findAllStream (options = {}) {
   const connectionManager = this.sequelize.connectionManager
   const QueryGenerator = this.QueryGenerator
-  const sql = QueryGenerator.selectQuery(this.tableName, options, this)
+  const sql = QueryGenerator.selectQuery(this.getTableName(), options, this)
   const queryStream = new PgQueryStream(sql)
 
   const buildModel = new Builder({
